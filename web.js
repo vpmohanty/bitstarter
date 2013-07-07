@@ -1,7 +1,7 @@
 var express = require('express');
 var fs = require("fs");
 
-var filename = "index.html";
+var filename = "./index.html";
 var buffer;
 
 fs.exists(filename, function(exists) {
