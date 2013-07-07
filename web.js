@@ -1,5 +1,5 @@
 var express = require('express');
-var fs = require("fs");
+var fs = require('fs');
 
 var filename = "./index.html";
 var buffer;
@@ -7,15 +7,11 @@ var buffer;
 fs.exists(filename, function(exists) {
     if (exists) {
 	fs.stat(filename, function(error, stats) {
+
 	    buffer = new Buffer(stats.size);
 
-	    buffer = fs.readFile(filename, function(err, data) {
-		if (err) throw err;
-		
-		console.log(data);
-	    });	   
-
-	    
+	    buffer = fs.readFileSync(filename, null);	   
+    
 	});
     }
 });
