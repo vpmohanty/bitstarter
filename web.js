@@ -6,13 +6,9 @@ var buffer;
 
 fs.exists(filename, function(exists) {
     if (exists) {
-	fs.stat(filename, function(error, stats) {
 
-	    buffer = new Buffer(stats.size);
+	buffer = fs.readFileSync(filename, null);
 
-	    buffer = fs.readFileSync(filename, null);	   
-    
-	});
     }
 });
 
